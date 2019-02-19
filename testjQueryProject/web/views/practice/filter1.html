@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>filter1</title>
+<script type="text/javascript" src="/testq/resources/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	function checkBtn() {
+		//each, is 이용
+		/* $("input[name=check]:checked").each(function(){
+			var test = "";
+			test += $(this).val()+"번";
+			console.log(test);
+			document.getElementById("p").innerHTML += test +"<br>";
+		}); */
+		var checkValue = "";
+		$("input[name=check]").each(function(){
+			if($(this).is(":checked")){
+				console.log($(this).val()+"번");
+				checkValue += $(this).val() + "번<br>";
+			}
+		});
+		
+		document.body.innerHTML += checkValue;
+	}
+</script>
+</head>
+<body>
+<input type="checkbox" name="check" value="1"> 1번
+<input type="checkbox" name="check" value="2"> 2번
+<input type="checkbox" name="check" value="3"> 3번
+<input type="checkbox" name="check" value="4"> 4번
+<br>
+<input type="button" value="체크 버튼 확인" onclick="checkBtn();">
+<p id="p"></p>
+</body>
+</html>
