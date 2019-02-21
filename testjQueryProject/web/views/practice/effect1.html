@@ -81,6 +81,38 @@
 			event.preventdefault();
 			return true;
 		});
+		
+		//실습3
+		$('#rvalue').on('change', function(){
+			var value = $(this).val();
+			var rgbString = makeColor();
+
+			$('#red').html('Red : ' + value);
+			$('#rgb').html('Color : ' + rgbString);
+
+			$('#colorPan').css('background', rgbString);
+		});
+
+		$('#gvalue').on('change', function(){
+			var value = $(this).val();
+			var rgbString = makeColor();
+
+			$('#green').html('Green : ' + value);
+			$('#rgb').html('Color : ' + rgbString);
+
+			$('#colorPan').css('background', rgbString);
+		});
+
+		$('#bvalue').on('change', function(){
+			var value = $(this).val();
+			var rgbString = makeColor();
+
+			$('#blue').html('Blue : ' + value);
+			$('#rgb').html('Color : ' + rgbString);
+
+			$('#colorPan').css('background', rgbString);
+		});
+
 
 	});
 	
